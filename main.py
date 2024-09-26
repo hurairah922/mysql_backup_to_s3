@@ -68,8 +68,8 @@ def dump_database(db_name):
 
         # Compress the backup file
         compressed_file = backup_file + ".zip"
-        with zipfile.ZipFile(compressed_file, "w", zipfile.ZIP_DEFLATED) as zipf:
-            zipf.write(backup_file, os.path.basename(backup_file))
+        with zipfile.ZipFile(compressed_file, "w", zipfile.ZIP_DEFLATED) as zipped_file:
+            zipped_file.write(backup_file, os.path.basename(backup_file))
 
         # Remove uncompressed SQL file
         os.remove(backup_file)
